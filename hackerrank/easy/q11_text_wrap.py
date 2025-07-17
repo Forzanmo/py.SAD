@@ -1,12 +1,14 @@
-import textwrap
+n, m = map(int, input().split())
+top = []
 
-def wrap(string, max_width):
-    result = ''
-    for i in range(0, len(string), max_width):
-        result += string[i:i+max_width] + '\n'
-    return result.strip()
+for i in range(1, n, 2):
+    s = '.|.' * i
+    top.append(s.center(m, '-'))
 
-if __name__ == '__main__':
-    string, max_width = input(), int(input())
-    result = wrap(string, max_width)
-    print(result)
+for t in top:
+    print(t)
+
+print('WELCOME'.center(m, '-'))
+
+for t in reversed(top):
+    print(t)
